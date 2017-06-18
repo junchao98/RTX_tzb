@@ -142,7 +142,7 @@ __task void get_data(void)     //传感器数据读回    王天一  or  马万里
 					
 					fun_get_data(i,0);                                                           //调用对应函数
 					next_time[i] += ((sensor_time_con[i].unit) * (sensor_time_con[i].time));           //计算下一次time
-					if(PRINT_ALL) printf("find id= %d next time %d \n",i,next_time[i]);
+					//if(PRINT_ALL) printf("find id= %d next time %d \n",i,next_time[i]);
 				}
 			
 		      }
@@ -230,9 +230,9 @@ __task void init (void)     //创建线程
 
 		task_super=os_tsk_create(super,0);  //创建  __task void LEDS(void)    2
  
-               TIM_Cmd(TIM2,ENABLE);          //心跳启动
+       TIM_Cmd(TIM2,ENABLE);          //心跳启动
 	     
-	        os_tsk_delete_self ();   //销毁自身
+	  os_tsk_delete_self ();   //销毁自身
 
 }
 
